@@ -1,0 +1,172 @@
+Ref: 5 step process in about-this-server:
+What's the information?
+How do I get the info?
+How do I use the information?
+--> write a line of code
+
+
+/*
+4/16
+Kris' learning style:
+
+1.) Creating templates to work off of
+
+ex: How to create a class function:
+class <name> extends from React.Component {
+//constructor
+
+//state
+
+//methods
+  
+// render()
+  return 
+    {JSX}
+}
+
+
+talking things out and being corrected helps me update what I don't know
+summarizing what we've done during our session helps me internalize the information
+Giving me small coding exercises helps me solidify concepts
+A checklist of tasks helps me keep track of my progress 
+Keeping things in a single document each session or date helps me when reviewing to visualize each session and what we've covered
+
+Reference function (...args) + README.md where you listed put the entire process in one of your projects
+*/
+
+"I've developed a plan for the feature I want to produce, can you walk through it with me to make sure it makes sense?"
+--------------------------------------------------------------------------------------------------
+
+
+node.js...express...testing suites...Vercel...API endpoints to remember data
+
+Database concepts:
+NoSQL...PostgresSQL...Migrations...knex...Heroku
+
+Steps to build a server:
+1.) find where data changes occur within client where data needs to stay
+  make, edit, delete reply (where are all your fetches going to be)
+2.) establish API endpoints + Express Router
+  App.get App.post etc
+  one API for everything you need to remember and get rid of
+3.) create DB + create migrations to create tables
+4.) make service functions for APIs to remember information in the Database
+ex: CreateReply-Service-Function
+5.) write tests to make sure everything works
+
+(TDD is optimal)
+
+Todo's: 
+Add functionality to Message-board
+------------------------------------------------------------------------------------------------------------------
+[x]Chirp (reply):
+How do we know the user wants to reply?
+  (UX) Clicking a button
+  (Dev) Change a state variable ex: true
+  (UX) conditional rendering for state variable
+How do we allow the user to write a reply?
+  Input field + a button to submit reply
+  add reply to posts data in the replies property
+  need postId that's being replied to + reply that they typed in the DOM
+  starting a last action by the user at the 'save' button use the DOM to find it (JSX)
+  find textarea next to the button that was clicked (previousSibling) in DOM family tree to grab value of actual reply
+
+  Post + what user typed --> location to store reply
+    write a fx in that component to alter state of posts data using 
+    setState((oldStateParamToUse => {
+      //find a copy of what you want to change by creating a varaible and setting it equal to the old posts data
+      //modify the infomation
+      //return new state  
+    })
+------------------------------------------------------------------------------------------------------------------
+•onClick of 'Chirp' buttton opens up form with an empty textbox to render input from user --clicking on 'Save' button will submit user input and add reply to message board 
+•Form will close upon submitting and add to post
+  •add reply to dummy data replies section within post object
+    how to add reply to the correct post:
+      "postId" to make sure it's in the correct spot && "reply" itself is what we need --> (add this reply to this particular postId)
+        put reply in replies property of posts object
+          add reply to array using .push()
+------------------------------------------------------------------------------------------------------------------
+[]Edit reply:
+*Edit box should close after clicking save
+How do we allow the user to edit their reply?
+(UX)clicking on Edit button highlights their reply in the textarea
+  (Dev) fires an event that targets the textarea
+an Edit button should appear for each reply
+  when user clicks 'save', the edit button should populate next to the reply
+    use postSibling to traverse the DOM and render the edit button to the page?
+the user should be able to save their edit or cancel to close textarea and display original UI 
+------------------------------------------------------------------------------------------------------------------
+[]Drop reply:
+What do we want to accomplish?
+  click the drop button, and delete the reply after confirmation
+  user will remove post onClick --> see prompt("This post will be deleted" <button>okay</button> closes out prompt and deletes reply <button>cancel</button> displays original UI )
+
+Styling/Presentation:
+  delete button should appear beside edit button of each reply
+
+What information do we need to delete the reply?
+  postId, replyId
+
+How do we make that happen? 
+  find the correct post // how: find postId
+  find the correct reply
+    find replyId // update reply //assign reply with new data
+
+------------------------------------------------------------------------------------------------------------------
+[]resize images to fit container on homepage (image carosels on home page)
+[]get feedback from Kevin and Keith
+[]make mobile friendly (<tr> 2 columns)
+not show columns...change font size...
+
+(each row should be separated by a line with a box around the border of the container)
+
+[]split up data into two columns for mobile view?
+// https://css-tricks.com/responsive-data-tables/
+[] create react biolerplate
+
+Notes:
+Steps to create a controlled (form) input:
+state variable....onChange...value={}
+
+Progress:
+[x] if user clicks on title they should be able to view messages in thread (lorem ipsum for mockup)
+[x]click on thread to view (using dummy data)
+[x]Customer feedback form
+[x]use media queries to make responsive
+[x]Separated logic into different components 
+[x]created default context
+[x]started adding state variables and added 'dummy' data in app to use with context
+[x]wrapped files in Context Provider and Consumer
+[x]started writing boiler plate for handlers in App to use with updating state && context in various components
+[x]map through new posts
+[x]use context to pass relevant data between components
+[x]utilize dummy data file for static client
+[x]set up links to route to display each page's content (in-progress)
+
+[]submit static client
+
+MVP:
+Perform build: npm run build
+Test out build: npx serve -s build
+Set up env variables: 1.) add console.log(process.env) 2.) Make temp env export REACT_APP_TEST=supersecretkey!
+3.) 
+...https://courses.thinkful.com/react-v1/checkpoint/18
+
+
+{/*
+build out everthing in App.js first
+separate in to components...get working with fake data...using 'store.js' or use fake variables...
+create Landing page, MB thread routes 
+
+Login URL as '/' 1 url for all messages and 1 url for messsge:id
+<route> to see the page <Link> to get there
+
+use dummy data file for static client
+---
+MVP
+take these variables into state variables
+add express boilerplate to have server to save posts on + AJAX calls to set 'update' state variable (reference noteful app for desired flow) 
+
+ */
+}

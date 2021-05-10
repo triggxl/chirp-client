@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./profile.css">
+  <title>Chirp (En-Passant) Profile Page</title>
+</head>
+<body>
+  <div id="profile-container">
+    <h1 id="profile-title">My Profile</h1>
+    <div>
+      <a><img src="search-bar-icon" alt="search bar icon to search through messages"></a>
+      <select name="drop-down-for-mb" id="drop-down-for-mb">
+        <!-- links route to corresponding pages; hamburger for 'options' below -->
+        <option value="my-posts">My Posts</option>
+        <option value="back-to-mb">Message Board</option>
+        <option value="sign-out">Sign Out</option>
+      </select>
+      <!-- edit/add new photo 'pencil' btn upon click-->
+      <img src="profile-avatar-user" alt="rounded potrait image centered on screen">
+      <section>
+        <ul>Username</ul>
+        <!-- expand on click -->
+        <ul>Recent Posts</ul>
+        <ul>Last Log In</ul>
+        <ul>Current Date/Time</ul>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

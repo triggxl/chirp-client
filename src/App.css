@@ -1,0 +1,57 @@
+#landing-page-container, #mb-container, #profile-container {
+  margin: auto;
+  width: auto;
+  max-width: 100vh;
+  padding: 10px;
+  text-align: center;
+  border: solid 2px black;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    #root {
+      width: 50%;
+    }
+    h1 {
+        border: solid 4px;
+        border-radius: 5px;
+        border-color: green;
+    }
+}
+  
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+    h1 {
+        border: solid 4px;
+        border-radius: 5px;
+        border-color: green;
+    }
+}
+  
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px){
+    h1 {
+        border: solid 4px;
+        border-radius: 5px;
+        border-color: green;
+    }
+}
+  
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px){
+    h1 {
+        border: solid 4px;
+        border-radius: 5px;
+        border-color: green;
+    }
+}
+  
+/* Media Query for Large screens */
+@media (min-width: 1281px) {
+    h1 {
+        border: solid 4px;
+        border-radius: 5px;
+        border-color: green;
+    }
+}
+/* https://www.geeksforgeeks.org/how-to-target-desktop-tablet-and-mobile-using-media-query/ */

@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
+#profile-container {
+  margin: auto;
+  width: 50%;
+  max-width: 100vh;
+  padding: 10px;
+  text-align: center;
+  border: solid 2px black;
+}

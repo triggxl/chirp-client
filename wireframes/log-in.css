@@ -1,0 +1,58 @@
+/* create a new repo, git clone <new-repo>*/
+
+/* 
+I'm thinking of setting root variables and applying them to each of the CSS elements 
+and using queries for mobile, tablet and desktop settings 
+*/
+
+* {
+  box-sizing: border-box;
+}
+/* :root {
+  single column, centered text (mobile)
+  --clmn: columns: 1,
+  --algn: text-align: center,
+} */
+
+/* html, body, #landing-page-container height 100%, 100vh  */
+#landing-page-container {
+  margin: auto;
+  width: 50%;
+  max-width: 100vh;
+  padding: 10px;
+  text-align: center;
+  border: solid 2px black;
+}
+
+
+/* #image-carosel {
+  background-color: #ddd;
+}
+
+#site-title {
+  background-color: #aaa;
+}
+
+#log-in-form {
+  background-color: #ddd;
+}
+
+#submit-btns {
+  background-color: #aaa;
+} */
+
+/* #image-one {
+  width: 50%;
+  height: 30vh;
+  object-fit: contain;
+} */
+
+
+/* #image-carosel, #log-in-form {
+  
+} */
+
+
+/* https://htmlcheatsheet.com/css/ https://unsplash.com/*/
+
+

@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+#mb-container {
+  margin: auto;
+  width: 50%;
+  max-width: 100vh;
+  padding: 10px;
+  text-align: center;
+  border: solid 2px black;
+  /* max-height: 150vh; */
+}
+
+#mb-table {
+  border: solid 2px black;
+}
+
+/* #mb-page-title {
+
+} */

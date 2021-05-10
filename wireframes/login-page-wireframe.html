@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="log-in.css">
+  <title>Chirp En-Passant Log-In Page</title>
+</head>
+<body>
+  <div id="landing-page-container">
+    <div id="image-carosel">
+      <section>Image-Carosel will display here</section>
+      <!-- <img id="image-one" src="./pictures/thom-milkovic-FTNGfpYCpGM-unsplash (1).jpg" alt="this is a picture of an old typewriter" number="3"> -->
+      <!-- <img src="./pictures/damon-hall-gZlycYbRtkk-unsplash.jpg" alt="vivid picture of a pair of parrots up close in the wild"> -->
+      <!-- <img src="./pictures/pavan-trikutam-71CjSSB83Wo-unsplash.jpg" alt="this is a picture of three old rotary phones lined up against a wall"> -->
+      <!-- <img src="./pictures/nathan-dumlao-pMW4jzELQCw-unsplash.jpg" alt="the is a picture of a circular table with cups containing different shades of expresso"> -->
+    </div>
+    <h1 id="site-title">Welcome to Chirp-(En-Passant)!</h1>
+    <!-- form validation if blank; user-friendly error messages -->
+    <form id="log-in-form" action="submit">
+      <label for="user-name-or-email">Username or Email</label>
+      <input type="text">
+      <label for="password">Password</label>
+      <input type="text">
+    </form>
+    <!-- just have pop up window to change password or sign up versus creating seperate pages -->
+    <div id="submit-btns">
+      <a href="reset-password-window-prompt">Forgot Password</a>
+      <div>
+        <button type="submit" id="sign-in-btn">Sign in</button>
+        <p>or</p>
+        <button type="submit" id="log-in-btn takes to log in window prompt">Log in</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- way to make this alternating shades of black grey white? -->
+<!-- Cycle for React: render JSX -> UI 2.) event handler changes state 3.) rerenders UI as long as you're using a state variable and changing it ex: setState() if using hooks keep in seperate component -->

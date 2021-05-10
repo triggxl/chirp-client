@@ -1,0 +1,49 @@
+#table-row {
+  border: 2px solid black;
+}
+
+.replies-section {
+  border: 2px dotted black;
+  text-align: center;
+  margin: 10px;
+}
+
+#tr-threads {
+  border: 2px solid black;
+}
+
+#cr-sec {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.reply-textarea, #topic-header {
+  display: block;
+  margin: auto;
+}
+
+/* .col-span {
+  margin: auto;
+  display: block;
+} */
+
+@media only screen and (max-width: 637) {
+  #mb-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+    /* hide columns __, __ */
+  }
+  .time-open-column {
+  display: hidden;
+  }
+}
+
+/* < 481px breaks UI */
+
+
+/* 
+
+animation carosel
+
+ */

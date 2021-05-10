@@ -1,0 +1,8 @@
+.site-button {
+  font-size: 15px;
+  border-radius: 5px;
+  color: rgb(24, 204, 0); 
+  background: transparent;
+}
+
+/* https://www.freecodecamp.org/news/a-quick-guide-to-styling-buttons-using-css-f64d4f96337f/ */

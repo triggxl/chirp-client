@@ -1,0 +1,46 @@
+@media only screen and (max-width: 900px) {
+  #mb-container {
+    margin: 0, 20%;
+  }
+}
+@media only screen and (max-width: 637px) {
+  /* ',' denotes these two classes will share the styles inside this block */
+  .open-since-column, .time-open-column {
+    display: none; 
+  }
+}
+
+
+#mb-table {
+  margin: 15px 50px;
+}
+
+#mb-links {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1.5em;
+}
+
+#form-inline {
+  margin-bottom: 20px;
+}
+
+#new-post-title, #post-content, #new-post-content {
+  margin-right: 10px;
+}
+
+#title-tr-mb {
+  text-decoration: underline;
+}
+
+#mb-table {
+  margin: auto;
+  padding-top: 20px;
+  padding-left: 40px;
+}
+
+img {
+  width: 75%;
+  height: 48vh;
+  margin-top: 10px;
+}
