@@ -26,7 +26,6 @@ class messageBoard extends React.Component {
       this.setState({ showAddForm: true })
     }
 
-
     const handleFetchCreatePost = (e) => {
       e.preventDefault();
       const newPost = {
@@ -67,13 +66,12 @@ class messageBoard extends React.Component {
       <div id="mb-container">
         <img src={ChirpingBird} alt="bird chirping on a tree branch" />
         <h1 id="mb-page-title">Chirp(En-Passant) Message Board:</h1>
-        {/* <img src="search-bar-icon" alt="search bar icon for message board" /> */}
         <div id="mb-links">
           <Link to="/" key={'/'}>Home</Link>
         </div>
         {!this.state.showAddForm ?
-          <div>
-            <div id="user-instructions">
+          <div id="user-form-and-instructions">
+            <div >
               <h3>Chirp Instructions:</h3>
               <p>1.) Click one of the down arrows to the right to view a post, OR Create your own!</p>
               <p>2.) Click 'Chirp' to reply and share your thoughts in the discussion board! <br /> (You may edit and delete your reply also!) </p>
@@ -110,64 +108,3 @@ class messageBoard extends React.Component {
 }
 
 export default messageBoard;
-
-
-
-/*
-
-Todo:
- after submitting: hide content fields and display 'Chirp' button again to add another post
-
-Endpoints:
-Posts
-/posts
-  create
-  read
-    GET '/posts
-  delete
-replies
-/replies
-  create
-    {reply}
-  update
-  delete
-  DELETE/:reply_id
-Having trouble assigning db to user Triggxl
-could use some help seeding data to db (through migrations I believe?)
-setting up API endpoints
-
-/book/book_id
-CRUD
-
-// Create it in JSX
-// create state....method to update state
-/* (MVP) <select name="drop-down-for-mb" id="drop-down-for-mb" onChange={e.target}>
-<option value="my-profile" onChange={() => HandleClickToProfilePage}>My Profile</option>
-<option value="my-posts" onChange={() => HandClickToMyPostsPage}>My Posts</option>
-<option value="landing-page" onChange={() => HandleClickToHomePage}>Chirp Home Page</option>
-</select>
-
-// (useHistory hook for MVP) state = {
-    //   selected: ''
-    // }
-    // function HandleClickToProfilePage(e) {
-    //   let history = useHistory(e.target);
-    //   history.push('/profile');
-    // }
-    // function HandClickToMyPostsPage(e) {
-    //   let history = useHistory(e.target);
-    //   history.push('/my-posts')
-    // }
-    // function HandleClickToHomePage(e) {
-    //   let history = useHistory(e.target);
-    //   history.push('/');
-    // }
-    // https://reactrouter.com/web/api/Hooks; https://stackoverflow.com/questions/51337618/reactjs-modifying-state-and-changing-url-onchange;
-
-// figured I need to make a build fx to grab the values on submit (Chirp);
-    // console logging to see output to make sure it's the correct element
-    // const buildNewPostOnChirp = (e) => {
-    //   this.setState({
-    //   })
-    // }
- */

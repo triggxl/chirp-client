@@ -3,17 +3,6 @@
     margin: 0, 20%;
   }
 }
-@media only screen and (max-width: 637px) {
-  /* ',' denotes these two classes will share the styles inside this block */
-  .open-since-column, .time-open-column {
-    display: none; 
-  }
-}
-
-
-#mb-table {
-  margin: 15px 50px;
-}
 
 #mb-links {
   display: flex;
@@ -42,5 +31,5 @@
 img {
   width: 75%;
   height: 48vh;
-  margin-top: 10px;
+  margin-bottom: 10px;
 }

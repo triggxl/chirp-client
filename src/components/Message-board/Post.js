@@ -90,7 +90,6 @@ class Post extends React.Component {
         //   return res.json()
         // })
         .then(res => res.json())
-        // .then(data => console.log('success', data))
         .then(() => {
           this.context.addReply(reply.id, this.props.post.id, this.state.content)
           this.setState({
@@ -167,7 +166,7 @@ class Post extends React.Component {
               </tr>
               {this.state.showDetails ?
                 <React.Fragment>
-                  <tr key="cr-sec" id="cr-sec"> Content and Replies Section:</tr>
+                  <tr key="cr-sec" id="cr-sec"> Content:</tr>
                   <tr key="sd">
                     <td className="col-span" colSpan={6}>{post.content}
                       <section key="section"></section>
@@ -229,40 +228,3 @@ class Post extends React.Component {
 }
 
 export default Post;
-
-// handling logic for updating reply (moved functionalty over to app and then called editReply fx within Post)
-// const handleSave = (e) => {
-// calls fx from app
-//what info does handleSave need?
-// the id of the post
-// know which reply (replyId)
-// text from the input field
-
-// how do you use that info to solve the problem
-// find the correct post // how: find id
-// find the correct reply
-// find replyId // update reply //assign reply with new data
-
-// post.id, id
-// post.replies[replyId - 1].replyId, replyId
-// DOM traversal: (S) Save button (E) textarea
-// innerText vs. value
-// let matchingid = post.id;
-// console.log(matchingid)
-// let matchingReplyId = this.state.replyIdToBeEdited;
-// console.log(matchingReplyId)
-// let editedReply = e.target.parentNode.firstChild.value;
-// console.log(editedReply)
-// let replyName;
-// this.setState({
-//   isEdited: false,
-//   isReplying: false,
-//   replyToBeEdited: ''
-// })
-// }
-
-// ToDo's: 4/2
-// textarea should appear and nothing else -->
-// textarea should close and new text should render 
-// delete button is being removed instead of text upon click of 'drop'
-// drop button shouldn't appear upon clicking edit

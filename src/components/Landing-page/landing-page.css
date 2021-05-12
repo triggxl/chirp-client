@@ -23,27 +23,27 @@
    position: relative;
 }
 
+img {
+   margin-bottom: 75px;
+}
+
 /* SLIDER ANIMATION */
 #slider img {
-   width: 680px;  /* Width Image */
-   height: 320px; /* Height Image */
+   width: 729px;  /* Width Image */
+   height: 325px; /* Height Image */
    position: absolute;
    left: -325px; /* Original Position - Outside of the Slider */
    list-style: none;
 }
 
-#slider img.expresso {
-   animation: cycle 10s linear infinite;
-}
 #slider img.typewriter {
    animation: cycle 14s linear infinite;
 }
-
 #slider img.parrots {
-   animation: cycletwo 10s linear infinite;
+   animation: cycletwo 20s linear infinite;
 }
 #slider img.rotary {
-   animation: cycletwo 14s linear infinite;
+   animation: cycletwo 24s linear infinite;
 }
 
 /* ANIMATION */
@@ -70,7 +70,6 @@
    100%{ left: -325px; opacity: 0; z-index: -1; }
 }
 
-/* PROGRESS BAR */
 .progress-bar {
    position: relative;
    left: -5px;
@@ -89,7 +88,7 @@
    /* 4%, 24%, 44%, 64%, 84% { width: 0%; opacity: 0.3; } */
 
    /* In these keyframes, the progress-bar moves forward for 3 seconds */
-   /* 16%, 36%, 56%, 76%, 96% { width: 100%; opacity: 0.7; } */
+   /* 16%, 36%, 56%, 76%, 96% { width: 100%; opacity: 0.7; }
 
    /* In these keyframes, the progress-bar has finished his path */
    17%, 37%, 57%, 77%, 97% { width: 100%; opacity: 0.3; }
