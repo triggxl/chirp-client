@@ -4,7 +4,7 @@ import landingPage from './components/Landing-page/landing-page';
 import messageBoard from './components/Message-board/message-board';
 import chirpContext from './chirp-context/chirpContext';
 import './App.css';
-import { API_URL } from './config'
+import { API_URL } from './config';
 
 class App extends React.Component {
   static contextType = chirpContext;
