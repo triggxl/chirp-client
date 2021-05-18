@@ -32,6 +32,7 @@ class App extends React.Component {
           })
       })
   }
+  /* Uncaught (in promise) TypeError: replies.forEach is not a function (client) 500 internal: Error: Unable to acquire a connection (server) */
 
   createNewPost = (id, title, content) => {
     const newPost = {
