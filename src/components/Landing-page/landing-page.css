@@ -84,12 +84,6 @@ img {
    /* In these keyframes, the progress-bar is stationary */
    0%, 20%, 40%, 60%, 80%, 100% { width: 0%; opacity: 0; }
 
-   /* In these keyframes, the progress-bar starts to come alive */
-   /* 4%, 24%, 44%, 64%, 84% { width: 0%; opacity: 0.3; } */
-
-   /* In these keyframes, the progress-bar moves forward for 3 seconds */
-   /* 16%, 36%, 56%, 76%, 96% { width: 100%; opacity: 0.7; }
-
    /* In these keyframes, the progress-bar has finished his path */
    17%, 37%, 57%, 77%, 97% { width: 100%; opacity: 0.3; }
 
@@ -119,7 +113,6 @@ img {
    transition: all 0.3s ease-in-out;
 }
 
-
 /* Animate the tooltip on hover */
 #slider img#first:hover .tooltip,
 #slider img#second:hover .tooltip,
@@ -135,10 +128,9 @@ img {
    animation-play-state: paused;
 }
 
-/* https://www.smashingmagazine.com/2012/04/pure-css3-cycling-slideshow/#3 */
-
 @media only screen and (max-width: 900px) {
-  #landing-page-container {
-    margin: 0, 20%;
-  }
+   #landing-page-container {
+      margin: 0, 20%;
+   }
 }
+/* https://www.smashingmagazine.com/2012/04/pure-css3-cycling-slideshow/#3 */

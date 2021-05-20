@@ -27,6 +27,7 @@ const landingPage = () => {
             </div>
             <h1 id="site-title">Welcome to Chirp-(En-Passant)!</h1>
             <h2>(An online discussion board)</h2>
+            {/* style button to match carosel || have a className="siteButton" */}
             <Link to="/message-board"><SiteButton style={{ fontSize: ".9em" }}>Let's Get Started!</SiteButton></Link>
           </div>
         )

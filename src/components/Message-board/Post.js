@@ -22,7 +22,7 @@ class Post extends React.Component {
   }
   render() {
     const { post } = this.props;
-    // bring outside of render
+
     const toggleThread = () => {
       this.setState({
         showDetails: !this.state.showDetails
@@ -56,11 +56,6 @@ class Post extends React.Component {
       })
     }
 
-    // const buildHandleSave = (e, context) => {
-    //   context.addReply(post.id, this.state.content);
-    //   this.setState({ isReplying: false })
-    // }
-
     const handleAddedReplyContent = (e) => {
       this.setState({
         title: e.target.value
@@ -82,12 +77,6 @@ class Post extends React.Component {
         },
         body: JSON.stringify(reply)
       })
-        // .then(res => {
-        //   if (!res.ok) {
-        //     throw new Error(res.status)
-        //   }
-        //   return res.json()
-        // })
         .then(res => res.json())
         .then(() => {
           this.context.addReply(reply.id, this.props.post.id, this.state.title)
@@ -168,7 +157,7 @@ class Post extends React.Component {
               </tr>
               {this.state.showDetails ?
                 <React.Fragment>
-                  <tr key="cr-sec" id="cr-sec"> Content:</tr>
+                  <tr key="cr-sec" id="cr-sec"> Replies:</tr>
                   <tr key="sd">
                     <td className="col-span" colSpan={6}>
                       {post.content}

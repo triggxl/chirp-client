@@ -17,13 +17,10 @@ class App extends React.Component {
   componentDidMount() {
     fetch(`${API_URL}/posts`)
       .then(res => res.json())
-      // .then(data => this.setState({ posts: data }))
-      // 
       .then((posts) => {
         fetch(`${API_URL}/replies`)
           .then(res => res.json())
           .then(replies => {
-            console.log('replies', replies)
             replies.forEach(reply => {
               const post = posts.find(post => post.id === reply.postId)
               post.replies = post.replies || []
@@ -33,7 +30,6 @@ class App extends React.Component {
           })
       })
   }
-  /* Uncaught (in promise) TypeError: replies.forEach is not a function (client) 500 internal: Error: Unable to acquire a connection (server) */
 
   createNewPost = (id, title, content) => {
     const newPost = {
@@ -46,7 +42,7 @@ class App extends React.Component {
       replies: [],
       timeOpen: 'One minute ago'
     }
-    // a cb fx will provide previous state as the callback by default
+    // cb fx will provide previous state as the callback by default
     this.setState(prevState => {
       // copy of state to modify to prevent mututating and other oddities
       const originalPosts = [...prevState.posts];
@@ -79,9 +75,7 @@ class App extends React.Component {
     })
   }
 
-  // put
   handleEditReply = (replyId, title, id) => {
-    // console.log('replies state:', this.state.replies)
     // find post
     let matchingPost = this.state.posts.find(post => post.id === id);
     let matchingPostIndex = this.state.posts.findIndex(post => post.id === id);
@@ -98,7 +92,6 @@ class App extends React.Component {
     this.setState({ posts: newPosts })
   }
 
-  // delete
   handleDeleteReply = (id, replyId) => {
     // find the right post
     let matchingPost = this.state.posts.find(post => post.id === id);
