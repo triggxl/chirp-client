@@ -17,7 +17,6 @@ class Post extends React.Component {
       isSaved: false,
       isReplying: false,
       replyIdToBeEdited: null,
-      content: '',
       title: '',
     }
   }
@@ -40,7 +39,7 @@ class Post extends React.Component {
     }
 
     const handleTextareaEdit = (e) => {
-      this.setState({ content: e.target.value })
+      this.setState({ title: e.target.value })
     }
 
     const toggleCancel = () => {
@@ -64,7 +63,7 @@ class Post extends React.Component {
 
     const handleAddedReplyContent = (e) => {
       this.setState({
-        content: e.target.value
+        title: e.target.value
       })
     }
 
@@ -72,10 +71,10 @@ class Post extends React.Component {
       e.preventDefault()
       const reply = {
         id: UUID(),
-        content: this.state.content,
+        title: this.state.title,
         postId: this.props.post.id
       }
-      console.log('content:', this.state.content)
+      console.log('content:', this.state.title)
       fetch(`${API_URL}/replies`, {
         method: 'POST',
         headers: {
@@ -91,10 +90,10 @@ class Post extends React.Component {
         // })
         .then(res => res.json())
         .then(() => {
-          this.context.addReply(reply.id, this.props.post.id, this.state.content)
+          this.context.addReply(reply.id, this.props.post.id, this.state.title)
           this.setState({
             isReplying: false,
-            content: ''
+            title: ''
           })
         }
         )
@@ -107,7 +106,7 @@ class Post extends React.Component {
       console.log(this.props.post.id)
       const replies = {
         id: this.state.replyIdToBeEdited,
-        content: this.state.content,
+        title: this.state.title,
         postid: this.props.post.id
       }
       return fetch(`${API_URL}/replies/${replyId}`, {
@@ -124,10 +123,10 @@ class Post extends React.Component {
           return res.json()
         })
         .then(() => {
-          this.context.editReply(replyId, this.state.content, this.props.post.id)
+          this.context.editReply(replyId, this.state.title, this.props.post.id)
           this.setState({
             isEdited: false,
-            content: ''
+            title: ''
           })
         }
         )
@@ -154,7 +153,7 @@ class Post extends React.Component {
     }
 
     const editedReply = post.replies.find(reply => reply.id === this.state.replyIdToBeEdited);
-    const editedText = this.state.content || (editedReply && editedReply.content)
+    const editedText = this.state.title || (editedReply && editedReply.title)
     return (
       <chirpContext.Consumer>
         {context => {
@@ -168,7 +167,7 @@ class Post extends React.Component {
                 <React.Fragment>
                   <tr key="cr-sec" id="cr-sec"> Content:</tr>
                   <tr key="sd">
-                    <td className="col-span" colSpan={6}>{post.content}
+                    <td className="col-span" colSpan={6}>{post.title}
                       <section key="section"></section>
                       {/* stateful logic to display textarea */}
                       {this.state.isReplying ?
@@ -176,7 +175,7 @@ class Post extends React.Component {
                           <p>New Chirp:</p>
                           {/* 1.) Click on 'Chirp' 2.) enter reply in textarea 3.) 'Save' new reply*/}
                           <form key="form" id="create-reply-form" onSubmit={handleFetchCreateReply}>
-                            <textarea key="tar" className="reply-textarea" value={this.state.content} onChange={handleAddedReplyContent} ></textarea>
+                            <textarea key="tar" className="reply-textarea" value={this.state.title} onChange={handleAddedReplyContent} ></textarea>
                             <SiteButton onClick={toggleCancel}>Cancel</SiteButton>
                             <SiteButton>Save</SiteButton>
                           </form>
@@ -204,7 +203,7 @@ class Post extends React.Component {
                         <tr className="replies-section">
                           <td key="colr" colSpan={6}>
                             {!this.state.isEdited &&
-                              <section key="rsec" onChange={(e) => this.setState({ content: e.target.value })} value={this.state.content} className="reply-section">{reply.content || 'There was no reply.'}</section>
+                              <section key="rsec" onChange={(e) => this.setState({ title: e.target.value })} value={this.state.title} className="reply-section">{reply.title || 'There was no reply.'}</section>
                             }
                             <div className="thread-btns">
                               {/* document.getElementById = previousElementSibling */}

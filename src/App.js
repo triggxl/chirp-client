@@ -23,6 +23,7 @@ class App extends React.Component {
         fetch(`${API_URL}/replies`)
           .then(res => res.json())
           .then(replies => {
+            console.log('replies', replies)
             replies.forEach(reply => {
               const post = posts.find(post => post.id === reply.postId)
               post.replies = post.replies || []
@@ -57,11 +58,10 @@ class App extends React.Component {
     })
   }
   // finding matching posts with prevState, editing it dynamically with whatever the user inputs and then giving it back to state
-  addReply = (id, postid, content) => {
+  addReply = (id, postid, title) => {
     const newReply = {
       id,
-      title: '',
-      content,
+      title,
       postid
     }
     this.setState((prevState) => {
@@ -80,7 +80,7 @@ class App extends React.Component {
   }
 
   // put
-  handleEditReply = (replyId, content, id) => {
+  handleEditReply = (replyId, title, id) => {
     // console.log('replies state:', this.state.replies)
     // find post
     let matchingPost = this.state.posts.find(post => post.id === id);
@@ -89,7 +89,7 @@ class App extends React.Component {
     let replyIndex = matchingPost.replies.findIndex(reply => reply.id === replyId);
     // get reply with idx
     const reply = { ...matchingPost.replies[replyIndex] }
-    reply.content = content
+    reply.title = title
     matchingPost.replies.splice(replyIndex, 1, reply)
     // create posts instance
     let newPosts = [...this.state.posts]
