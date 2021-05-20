@@ -1,0 +1,3 @@
+problems: 
+edit input field is not grabbing text when editing;  
+replies aren't persisting upon reload and render as empty comments

@@ -156,7 +156,7 @@ class Post extends React.Component {
     }
 
     const editedReply = post.replies.find(reply => reply.id === this.state.replyIdToBeEdited);
-    const editedText = this.state.content || (editedReply && editedReply.content)
+    const editedText = this.state.title || (editedReply && editedReply.title)
     return (
       <chirpContext.Consumer>
         {context => {
@@ -170,8 +170,8 @@ class Post extends React.Component {
                 <React.Fragment>
                   <tr key="cr-sec" id="cr-sec"> Content:</tr>
                   <tr key="sd">
-                    <td className="col-span" colSpan={6}>{post.content}
-                      <section key="section"></section>
+                    <td className="col-span" colSpan={6}>
+                      {post.content}
                       {/* stateful logic to display textarea */}
                       {this.state.isReplying ?
                         <>
