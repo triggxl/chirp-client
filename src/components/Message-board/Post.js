@@ -172,6 +172,8 @@ class Post extends React.Component {
                   <tr key="sd">
                     <td className="col-span" colSpan={6}>
                       {post.content}
+                      <section key="section"></section>
+
                       {/* stateful logic to display textarea */}
                       {this.state.isReplying ?
                         <>
