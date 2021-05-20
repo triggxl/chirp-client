@@ -1,3 +1,5 @@
 problems: 
-edit input field is not grabbing text when editing;  
-replies aren't persisting upon reload and render as empty comments
+[x] edit input field is not grabbing text when editing;  
+  editedText Post.js 159 was equal to content instead of title
+[x] replies are persisting upon reload but render as empty comments
+  serialized reply was returning a content property still instead of title
