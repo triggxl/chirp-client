@@ -101,7 +101,10 @@ class Post extends React.Component {
           console.error('error:', error.message)
         })
     }
-
+    /**
+     * 
+     * @param {string} replyId 
+     */
     const handleFetchEditReply = (replyId) => {
       console.log(this.props.post.id)
       const replies = {
@@ -203,7 +206,7 @@ class Post extends React.Component {
                         <tr className="replies-section">
                           <td key="colr" colSpan={6}>
                             {!this.state.isEdited &&
-                              <section key="rsec" onChange={(e) => this.setState({ title: e.target.value })} value={this.state.title} className="reply-section">{reply.title || 'There was no reply.'}</section>
+                              <section key="rsec" onChange={(e) => this.setState({ title: e.target.value })} value={this.state.title} className="reply-section">{reply.title}</section>
                             }
                             <div className="thread-btns">
                               {/* document.getElementById = previousElementSibling */}
