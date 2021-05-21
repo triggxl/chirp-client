@@ -3,3 +3,6 @@ problems:
   editedText Post.js 159 was equal to content instead of title
 [x] replies are persisting upon reload but render as empty comments
   serialized reply was returning a content property still instead of title
+
+5/20
+[x] push to vercel
