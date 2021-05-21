@@ -18,14 +18,14 @@
   margin-right: 10px;
 }
 
-#title-tr-mb {
-  text-decoration: underline;
-  padding-left: 70px;
+#mb-table {
+  text-align: center;
+  margin: 0px auto;
 }
 
-#mb-table {
-  margin: auto;
-  padding-top: 20px;
+#title-tr-mb, #cr-sec {
+  display: inline-flex;
+  padding-left: 50px;
 }
 
 img {

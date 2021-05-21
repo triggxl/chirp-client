@@ -4,6 +4,11 @@
 
 }
 
+.tb {
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .replies-section {
   border: 2px dotted black;
   text-align: center;
