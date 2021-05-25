@@ -10,3 +10,8 @@ problems:
 5/21
 
 have user-form-instructions inherit the styling of mb-table
+
+5/25
+
+feature to add images 
+feature to make links clickable

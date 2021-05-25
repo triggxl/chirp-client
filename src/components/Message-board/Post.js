@@ -69,7 +69,6 @@ class Post extends React.Component {
         title: this.state.title,
         postId: this.props.post.id
       }
-      console.log('content:', this.state.title)
       fetch(`${API_URL}/replies`, {
         method: 'POST',
         headers: {
@@ -95,7 +94,6 @@ class Post extends React.Component {
      * @param {string} replyId 
      */
     const handleFetchEditReply = (replyId) => {
-      console.log(this.props.post.id)
       const replies = {
         id: this.state.replyIdToBeEdited,
         title: this.state.title,

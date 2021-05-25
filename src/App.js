@@ -62,11 +62,8 @@ class App extends React.Component {
     }
     this.setState((prevState) => {
       // finds the post with matching id goes into that post's reply, reconstructing new object within array to account for other properties reply has
-      console.log('prevState:', prevState)
       const originalPosts = [...prevState.posts];
       let matchingPost = originalPosts.find(post => post.id === postid);
-      console.log('postid:', postid)
-      console.log('matching post:', matchingPost)
       // add new reply to matching post
       matchingPost.replies.push(newReply);
       return {
