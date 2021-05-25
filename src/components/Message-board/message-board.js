@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './message-board.css';
 import Post from './Post';
 import ChirpingBird from '../pictures/chirping-bird.jpg';
+// import Leaves from '../pictures/leaves-img.jpg';
 import SiteButton from '../site-button';
 import { API_URL } from '../../config';
 import UUID from 'react-uuid';
@@ -90,18 +91,21 @@ class messageBoard extends React.Component {
             {<SiteButton>Chirp!</SiteButton>}
           </form>
         }
-        <table id="mb-table">
-          <thead>
-            <tr id="table-row">
-              <th id="title-tr-mb">Title:</th>
-            </tr>
-          </thead>
-          {this.context.posts.map(post => {
-            return (
-              <Post post={post} key={post.title} />
-            )
-          })}
-        </table>
+        <div>
+          <table id="mb-table">
+            <thead>
+              <tr id="table-row">
+                <th id="title-tr-mb">Title:</th>
+              </tr>
+            </thead>
+            {this.context.posts.map(post => {
+              return (
+                <Post post={post} key={post.title} />
+              )
+            })}
+          </table>
+          {/* <img src={Leaves} alt="leaves collage" className="leaves-img" /> */}
+        </div>
       </div>
     );
   }

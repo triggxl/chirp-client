@@ -47,6 +47,14 @@ img {
   margin-bottom: 10px;
 }
 
+/* .leaves-img {
+  z-index: -1;
+  width: 400px;
+  height: 350px;
+  position: absolute;
+  left: 0;
+} */
+
 .col-span {
   max-width: 200px;
 }
