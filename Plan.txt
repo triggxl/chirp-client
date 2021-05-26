@@ -13,5 +13,8 @@ have user-form-instructions inherit the styling of mb-table
 
 5/25
 
-feature to add images 
-feature to make links clickable
+Later release features:
+[]add images 
+[]make links clickable
+[]ability to delete a Post
+[]add border around replies
